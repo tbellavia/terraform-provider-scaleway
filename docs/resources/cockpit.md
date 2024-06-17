@@ -13,11 +13,9 @@ The `scaleway_cockpit` resource allows you to create and manage Scaleway Cockpit
 
 Refer to Cockpit's [product documentation](https://www.scaleway.com/en/docs/observability/cockpit/concepts/) and [API documentation](https://www.scaleway.com/en/developers/api/cockpit/regional-api) for more information.
 
-For more information consult the [documentation](https://www.scaleway.com/en/docs/observability/cockpit/concepts/).
-
 ## Use Cockpit
 
-The following commands show you how to:
+The following commands allow you to:
 
 - activate Cockpit in the Scaleway default Project
 - activate Cockpit in a given Project specified by the Project ID
@@ -58,13 +56,15 @@ resource "grafana_folder" "test_folder" {
 
 ## Arguments reference
 
-- `project_id` - (Defaults to the Project specified in the [provider's configuration](../index.md#project_id)) The ID of the Project the Cockpit is associated with.
+This section lists the arguments that are supported:
+
+- `project_id` - (Defaults to the Project specified in the [provider configuration](../index.md#project_id)) The ID of the Project the Cockpit is associated with.
 - `plan` - (Optional) The name or ID of the pricing plan to use. Find out more about [pricing plans](https://console.scaleway.com/cockpit/plans) in the Scaleway console.
 
 
 ## Attributes reference
 
-This section lists the attributes that are automatically exported when the `scaleway_cockpit` resource is created:
+This section lists the attributes that are exported when the `scaleway_cockpit` resource is created:
 
 - `plan_id` - The ID of the current pricing plan.
 - `endpoints` - A list of [endpoints](https://www.scaleway.com/en/docs/observability/cockpit/concepts/#endpoints) related to Cockpit, each with specific URLs:
@@ -76,7 +76,7 @@ This section lists the attributes that are automatically exported when the `scal
 
 ## Import
 
-This section explains how to import Cockpits using its `{project_id}`:
+This section explains how to import a Cockpit using its `{project_id}`.
 
 ```bash
 $ terraform import scaleway_cockpit.main 11111111-1111-1111-1111-111111111111
